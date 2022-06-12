@@ -60,6 +60,10 @@ h3 {
   margin-top: 1.5rem;
 }
 
+.payment-btn:hover {
+  background-color: #766cf1;
+}
+
 .cancel-payment {
   font-size: 0.95rem;
   font-weight: 900;
@@ -68,6 +72,10 @@ h3 {
   border: none;
   cursor: pointer;
   margin-top: 1.5rem;
+}
+
+.cancel-payment:hover {
+  color: #232846;
 }
 
 .plan-selection {
@@ -100,6 +108,10 @@ h3 {
   font-weight: 700;
   color: hsl(245, 75%, 52%);
   cursor: pointer;
+}
+
+.change-plan:hover {
+  color: #8880cf;
 }
 
 @media (min-width: 1100px) {
