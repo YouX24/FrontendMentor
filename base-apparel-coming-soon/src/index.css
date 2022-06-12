@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.base-header {
+  height: 75px;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+}
+
+.base-header > img {
+  height: 22px;
+}
+
+.photograph-container {
+  width: 100vw;
+  height: 250px;
+  background-image: url("./images/hero-mobile.jpg");
+  background-size: cover;
+}
+
+.message-container {
+  text-align: center;
+  padding: 2rem 2rem;
+}
+
+span {
+  color: hsl(0, 36%, 70%);
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 2.5rem;
+  letter-spacing: 10px;
+  margin: 0;
+  padding: 2rem 2rem 1rem 2rem;
+}
+
+p {
+  font-size: 0.9rem;
+  color: hsl(0, 36%, 70%);
+  margin: 0;
+  line-height: 1.5rem;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
+  justify-content: space-between;
+  position: relative;
+}
+
+form:invalid {
+  border-color: red !important;
+}
+
+input[type="email"] {
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 1.2rem;
+  padding: 1rem;
+  padding-right: 5.5rem;
+  border: 1px solid hsl(0, 36%, 70%);
+  background-color: transparent;
+}
+
+input[type="email"]::placeholder {
+  color: lightgray;
+}
+
+button {
+  height: 2.5rem;
+  width: 3.25rem;
+  border-radius: 1.2rem;
+  background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  border: none;
+  position: absolute;
+  right: 0;
+  box-shadow: -2px 3px 10px hsl(0, 36%, 70%);
+  cursor: pointer;
+}
+
+button:hover {
+  background-image: linear-gradient(135deg, #f7c9cc, #f7c9cc);
+  box-shadow: -3px 5px 10px hsl(0, 36%, 70%)
+}
+
+.error-icon {
+  height: 20px;
+  position: absolute;
+  right: 4rem;
+  display: none;
+}
+
+small {
+  color: hsl(0, 93%, 68%);
+  margin-top: 15px;
+  margin-left: 20px;
+  text-align: left;
+  display: none;
+}
+
+@media (min-width: 400px) {
+  .photograph-container {
+    height: 325px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .base-header > img {
+    height: 30px;
+  }
+
+  main {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  h2 {
+    padding-left: 0;
+    font-size: 4rem;
+  }
+
+  .base-header {
+    position: absolute;
+    top: 2rem;
+    left: 5rem
+  }
+
+  .message-container {
+    order: 2;
+    padding: 7rem;
+    text-align: left;
+    flex-grow: 6;
+  }
+
+  .photograph-container {
+    height: 100vh;
+    background-image: url("./images/hero-desktop.jpg");
+    background-size: cover;
+    order: 3;
+    flex-grow: 4;
+  }
+
+  button {
+    width: 5rem;
+  }
+
+  .error-icon {
+    right: 6rem;
+  }
+
+  input[type="email"] {
+    padding-right: 8rem;
+  }
+}
