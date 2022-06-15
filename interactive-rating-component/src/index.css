@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+}
+
+/* #fc7613 - orange
+#767e89 - letter color */
+
+body {
+    margin: 0;
+    font-family: 'Overpass', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #141519;
+}
+
+.rate-card {
+    padding: 2rem;
+    background-color: #1e252f;
+    border-radius: 7%;
+    width: 400px;
+}
+
+span {
+    background-color: #262f38;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.question {
+    color: #FFF;
+    font-size: 1.7rem;
+    margin-bottom: 0;
+}
+
+.message {
+    color: #767e89;
+    line-height: 1.5rem;
+    font-size: 15px;
+}
+
+.rating {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem
+}
+
+.rate-num {
+    color: #767e89;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.rate-num:hover {
+    background-color: #7c8797;
+    color: #FFF;
+}
+
+.selected-num {
+    font-weight: 700;
+    cursor: pointer;
+    background-color: #FC7613;
+    color: #FFF;
+}
+
+.submit {
+    width: 100%;
+    height: 3rem;
+    border-radius: 50px;
+    background-color: #FC7613;
+    border: none;
+    color: #FFF;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: #FFF;
+    color: #FC7613;
+}
+
+.thank-card {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+    height: 416.19px;
+    background-color: #1e252f;
+    border-radius: 7%;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.selection-message {
+    color: #FC7613;
+    padding: 0.5rem 1.5rem;
+    margin-top: 2rem;
+    background-color: #262f38;
+    border-radius: 50px;
+}
+
+.thank-you {
+    color: #FFF;
+    font-size: 1.7rem;
+    margin: 1rem;
+}
+
+.appreciate-message {
+    color: #767e89;
+    margin: 0;
+}
+
+@media (max-width: 420px) {
+    .rate-card {
+        width: 325px;
+    }
+
+    span {
+        width: 40px;
+        height: 40px;
+    }
+
+    .question {
+        font-size: 1.5rem;
+    }
+
+    .message {
+        font-size: 13px;
+    }
+
+    .submit {
+        height: 2.5rem;
+    }
+
+    .thank-card {
+        width: 325px;
+        height: 379px;
+    }
+
+    .selection-message {
+        font-size: 13px;
+        border-radius: 50px;
+    }
+
+    .thank-you {
+        font-size: 1.5rem;
+    }
+    
+    .appreciate-message {
+        font-size: 13px;
+    }
+}
