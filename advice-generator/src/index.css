@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Manrope', sans-serif;
+    height: 100vh;
+    background-color: hsl(218, 23%, 16%);
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+section {
+    width: 345px;
+    background-color: hsl(217, 19%, 24%);
+    text-align: center;
+    position: relative;
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.advice-num {
+    color: hsl(150, 100%, 66%);
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+.advice {
+    color: hsl(193, 38%, 86%);
+    font-size: 23px;
+}
+
+.divider {
+    width: 100%;
+    height: 1rem;
+    background-image: url("./images/pattern-divider-mobile.svg");
+    background-repeat: no-repeat;
+    padding-bottom: 3.5rem;
+}
+
+.dice-btn {
+    background-color: hsl(150, 100%, 66%);
+    height: 4rem;
+    width: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -2rem;
+    left: calc(50% - 2rem);
+    cursor: pointer;
+}
+
+.dice-btn:hover {
+    box-shadow: 0 0 40px hsl(150, 100%, 66%);
+}
+
+.dice-img {
+    display: block;
+}
+
+@media (min-width: 550px) {
+    section {
+        width: 540px;
+        padding: 3rem
+    }
+
+    .advice-num {
+        font-size: 13px;
+    }
+
+    .advice {
+        padding-bottom: 1rem;
+    }
+
+    .divider {
+        background-image: url("./images/pattern-divider-desktop.svg");
+        padding-bottom: 2.5rem;
+    }
+}
