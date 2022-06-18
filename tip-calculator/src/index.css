@@ -3,6 +3,7 @@
 }
 
 body {
+  min-height: 100vh;
   margin: 0;
   font-family: 'Space Mono', monospace;
   background-color: hsl(185, 41%, 84%);
@@ -56,6 +57,10 @@ header {
 
 .user-input:focus {
   outline: 2px solid #7cbfb7;
+}
+
+.num-people-error {
+  outline: 2px solid #da7e64;
 }
 
 .num-people-error:focus {
@@ -114,7 +119,7 @@ header {
 
 .error-message {
   color: #da7e64;
-  margin: 0;
+  margin: 2rem 0 0 0;
   display: none;
 }
 
@@ -173,4 +178,36 @@ button:hover {
 
 input[type="text"]:hover {
   cursor: pointer;
+}
+
+.num-people-p {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (min-width: 922px) {
+  .calculator {
+    width: 922px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3em;
+  }
+
+  .heading-margin {
+    margin-top: 2.5rem;
+  }
+
+  .result {
+    margin: 0;
+    padding: 3rem 2.5rem 1.5rem 2.5rem;
+  }
+
+  .tip-selection {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 3.1rem);
+  }
+
+  .calculated {
+    font-size: 3rem;
+  }
 }

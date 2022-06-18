@@ -19,10 +19,12 @@ function Tip() {
             [name]: value
         }))
         if (name === "numPeople" && parseInt(value) === 0) {
+            event.target.classList.add("num-people-error")
             document.querySelector(".error-message").style.display = "block";
         }
-        else {
+        else if (name === "numPeople" && parseInt(value) > 0) {
             document.querySelector(".error-message").style.display = "none";
+            event.target.classList.remove("num-people-error")
         }
     }
 
@@ -104,8 +106,10 @@ function Tip() {
                         <button className="tip-btn unselected-btn" onClick={tipSelect} value="50" name="tipPercent">50%</button>
                         <input className='custom-tip' onChange={customTip} type="text" name="tipPercent" placeholder='Custom'/>
                     </div>
-                    <p className="heading-margin">Number of People</p>
-                    <p className="error-message">Can't be zero</p>
+                    <div className="num-people-p">
+                        <p className="heading-margin num-of-people">Number of People</p>
+                        <p className="error-message">Can't be zero</p>
+                    </div>
                     <div className="input-div">
                         <img className="floating-icon" src={Person} alt="people"/>
                         <input className="user-input" onChange={toggleChange} value={bill.numPeople} type="text" name="numPeople" placeholder='0'/>
