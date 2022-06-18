@@ -9,8 +9,168 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 700;
 }
 
-.logo {
-  margin: 0 auto 0 auto;
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.75rem
+}
+
+.calculator {
+  background-color: #FFF;
+  width: 100vw;
+  padding: 2rem;
+  border-radius: 20px;
+}
+
+.heading {
+  margin: 0;
+  color: hsl(186, 14%, 43%);
+}
+
+.heading-margin {
+  margin: 2rem 0 0.5rem 0;
+  color: hsl(186, 14%, 43%);
+}
+
+.input-div {
+  position: relative;
+}
+
+.user-input {
+  width: 100%;
+  text-align: right;
+  height: 3rem;
+  font-size: 24px;
+  border: none;
+  background-color: hsl(189, 41%, 97%);
+  border-radius: 5px;
+  color: hsl(183, 100%, 15%);
+  font-weight: 700;
+  font-family: 'Space Mono', monospace;
+  padding: 1rem;
+}
+
+.user-input:focus {
+  outline: 2px solid #7cbfb7;
+}
+
+.num-people-error:focus {
+  outline: 2px solid #da7e64;
+}
+
+.floating-icon {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+}
+
+.custom-tip {
+  width: 100%;
+  font-size: 24px;
+  font-family: 'Space Mono';
+  text-align: right;
+  color:hsl(186, 14%, 43%);
+  padding: 1rem;
+  background-color:hsl(189, 41%, 97%);
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+.custom-tip:focus {
+  outline: 2px solid #7cbfb7;
+}
+
+.tip-selection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 3.1rem);
+  gap: 1rem
+}
+
+.selected-btn {
+  background-color: hsl(172, 67%, 45%);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-family: 'Mono Space', monospace;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.unselected-btn {
+  background-color:hsl(183, 100%, 15%);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-family: 'Mono Space', monospace;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.error-message {
+  color: #da7e64;
+  margin: 0;
+  display: none;
+}
+
+.result {
+  background-color:hsl(183, 100%, 15%);
+  border-radius: 15px;
+  padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.per-person {
+  display: flex;
+  flex-direction: column;
+}
+
+.per-person > p {
+  margin: 0;
+}
+
+.total {
+  color: #FFF;
+}
+
+.per {
+  color:hsl(186, 14%, 43%);
+  font-size: .8rem;
+}
+
+.calculated {
+  color: hsl(172, 67%, 45%);
+  text-align: right;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.reset {
+  grid-column: span 2;
+  height: 3rem;
+  background-color:hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 24px;
+  font-family: 'Mono Space', monospace;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #9fe8df;
+  color:hsl(183, 100%, 15%)
+}
+
+input[type="text"]:hover {
+  cursor: pointer;
 }

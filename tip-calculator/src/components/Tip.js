@@ -18,11 +18,36 @@ function Tip() {
             ...prevBill,
             [name]: value
         }))
+        if (name === "numPeople" && parseInt(value) === 0) {
+            document.querySelector(".error-message").style.display = "block";
+        }
+        else {
+            document.querySelector(".error-message").style.display = "none";
+        }
     }
 
     function tipSelect(event) {
         toggleChange(event);
-        //TODO Change Button Color
+        const allTipBtn = document.getElementsByClassName('tip-btn')
+        for (let i = 0; i < allTipBtn.length; i++) {
+            allTipBtn[i].classList.add('unselected-btn')
+            allTipBtn[i].classList.remove('selected-btn')
+        }
+        event.target.classList.add('selected-btn');
+        event.target.classList.remove('unselected-btn');
+    }
+
+    function customTip(event) {
+        const allTipBtn = document.getElementsByClassName('tip-btn')
+        for (let i = 0; i < allTipBtn.length; i++) {
+            allTipBtn[i].classList.add('unselected-btn')
+            allTipBtn[i].classList.remove('selected-btn')
+        }
+        const {value, name} = event.target;
+        setBill((prevBill) => ({
+            ...prevBill,
+            [name]: value
+        }))
     }
 
     function tipPerPerson() {
@@ -41,43 +66,65 @@ function Tip() {
         return total.toFixed(2);
     }
 
+    function reset() {
+        setBill(({
+            billTotal: "",
+            tipPercent: "",
+            numPeople: "",
+            tipAmount: "",
+        }))
+
+        const allTipBtn = document.getElementsByClassName('tip-btn')
+        for (let i = 0; i < allTipBtn.length; i++) {
+            allTipBtn[i].classList.add('unselected-btn')
+            allTipBtn[i].classList.remove('selected-btn')
+        }
+
+        document.querySelector('.custom-tip').value = "";
+    }
+
     return (
         <div>
-            <img className="logo" src={Logo} alt="splitter"/>
-            <section>
-                <div>
-                    <p>Bill</p>
-                    <img src={Dollar} alt="dollar"/>
-                    <input onChange={toggleChange} value={bill.billTotal} type="text" name="billTotal" placeholder='0.00'/>
-                </div>
-                <p>Select Tip %</p>
-                <div>
-                    <button onClick={tipSelect} value="5" name="tipPercent">5%</button>
-                    <button onClick={tipSelect} value="10" name="tipPercent">10%</button>
-                    <button onClick={tipSelect} value="15" name="tipPercent">15%</button>
-                    <button onClick={tipSelect} value="25" name="tipPercent">25%</button>
-                    <button onClick={tipSelect} value="50" name="tipPercent">50%</button>
-                    <input onChange={toggleChange} type="text" name="tipPercent" placeholder='CUSTOM'/>
-                </div>
-                <div>
-                    <p>Number of People</p>
-                    <img src={Person} alt="people"/>
-                    <input onChange={toggleChange} value={bill.numPeople} type="text" name="numPeople" placeholder='0'/>
-                </div>
-            </section>
-            <section>
-                <div>
-                    <p>Tip Amount</p>
-                    <p>/ person</p>
-                </div>
-                <p>${tipPerPerson()}</p>
-                <div>
-                    <p>Total</p>
-                    <p>/ person</p>
-                </div>
-                <p>${totalPerPerson()}</p>
-                <button>RESET</button>
-            </section>
+            <header>
+                <img className="logo" src={Logo} alt="splitter"/>
+            </header>
+            <div className="calculator">
+                <section>
+                    <p className="heading">Bill</p>
+                    <div className="input-div">
+                        <img className="floating-icon" src={Dollar} alt="dollar"/>
+                        <input className="user-input bill-input" onChange={toggleChange} value={bill.billTotal} type="text" name="billTotal" placeholder='0.00'/>
+                    </div>
+                    <p className="heading-margin">Select Tip %</p>
+                    <div className="tip-selection">
+                        <button className="tip-btn unselected-btn" onClick={tipSelect} value="5" name="tipPercent">5%</button>
+                        <button className="tip-btn unselected-btn" onClick={tipSelect} value="10" name="tipPercent">10%</button>
+                        <button className="tip-btn unselected-btn" onClick={tipSelect} value="15" name="tipPercent">15%</button>
+                        <button className="tip-btn unselected-btn" onClick={tipSelect} value="25" name="tipPercent">25%</button>
+                        <button className="tip-btn unselected-btn" onClick={tipSelect} value="50" name="tipPercent">50%</button>
+                        <input className='custom-tip' onChange={customTip} type="text" name="tipPercent" placeholder='Custom'/>
+                    </div>
+                    <p className="heading-margin">Number of People</p>
+                    <p className="error-message">Can't be zero</p>
+                    <div className="input-div">
+                        <img className="floating-icon" src={Person} alt="people"/>
+                        <input className="user-input" onChange={toggleChange} value={bill.numPeople} type="text" name="numPeople" placeholder='0'/>
+                    </div>
+                </section>
+                <section className="result">
+                    <div className="per-person">
+                        <p className="total">Tip Amount</p>
+                        <p className="per">/ person</p>
+                    </div>
+                    <p className="calculated">${tipPerPerson()}</p>
+                    <div className="per-person">
+                        <p className="total">Total</p>
+                        <p className="per">/ person</p>
+                    </div>
+                    <p className="calculated">${totalPerPerson()}</p>
+                    <button className="reset" onClick={reset}>RESET</button>
+                </section>
+            </div>
         </div>
     )
 }
