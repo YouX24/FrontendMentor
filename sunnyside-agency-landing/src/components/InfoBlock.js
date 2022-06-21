@@ -2,7 +2,7 @@ import React from 'react';
 
 function InfoBlock(props) {
     return (
-        <section className="info-block">
+        <section className={props.className + " info-block"}>
             <div className="info-center">
                 <h3 className="info-heading">{props.header}</h3>
                 <p className="info-message">{props.info}</p>

@@ -8,13 +8,15 @@ function InfoSection() {
         <section className="info-section">
             <PhotoBlock className="egg"/>
             <InfoBlock 
+                className="info-egg-block"
                 header="Transform your brand" 
                 info="We are a full-service creative agency specializing in helping brands grow fast. Engage your clients through compelling visuals that do most of the marketing for you."
                 link=""
                 underline="info-yellow-underline"
             />
             <PhotoBlock className="cup"/>
-            <InfoBlock 
+            <InfoBlock
+                className="info-orange-block"
                 header="Stand out to the right audience" 
                 info="Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we'll build and extend your brand in digital places."
                 link=""
