@@ -15,6 +15,10 @@ body {
   justify-content: space-between;
 }
 
+.desktop-directory {
+  display: none;
+}
+
 header {
   background: url("./images/mobile/image-header.jpg") no-repeat center bottom;
   background-size: cover;
@@ -277,7 +281,8 @@ footer > img {
 
 .footer-pages {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 3rem;
   padding-top: 2rem;
 }
 
@@ -307,6 +312,15 @@ footer > img {
   header {
     background: url("./images/desktop/image-header.jpg") no-repeat center bottom;
     background-size: cover;
+    height: 700px;
+  }
+
+  .creatives > h1 {
+    font-size: 3.5rem;
+  }
+
+  .creatives > img {
+    padding-top: 5rem;
   }
 
   .info-section {
@@ -371,6 +385,45 @@ footer > img {
 
 @media (min-width: 1150px) {
 
+  .navbar {
+    height: 130px;
+    padding: 2.5rem;
+  }
+
+  .navbar > img {
+    width: 170px;
+  }
+
+  .desktop-directory {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .desktop-directory > a {
+    text-decoration: none;
+    color: #e3faff;
+    font-size: 1.1rem;
+  }
+
+  .desktop-directory > .active-desktop {
+    color: black;
+    font-family: "Fraunces", serf;
+    font-size: 1rem;
+    text-transform: uppercase;
+    background-color: white;
+    padding: 1.1rem 1.75rem;
+    border-radius: 50px;
+  }
+
+  .burger-menu {
+    display: none;
+  }
+
+  .menu {
+    display: none !important;;
+  }
+
   .client-testimonial {
     padding-top: 5rem;
     padding-bottom: 7rem;
@@ -391,18 +444,44 @@ footer > img {
 
 @media (min-width: 1440px) {
 
-
+  header {
+    height: 800px;
+  }
 
   .info-section {
     grid-template-rows: repeat(3, 600px);
   }
 
+  .info-block {
+    padding: 8.5rem;
+  }
+
+  .info-heading {
+    font-size: 2.5rem;
+  }
+
+  .info-center {
+    text-align: left;
+  }
+
+  .info-learn-more {  
+    display: inline-block;
+    padding-top: 1.5rem;
+  }
+
+  .category-message {
+    display: inline-block;
+    width: 340px;
+  }
+
   .cherry > h4 {
     padding-top: 22rem;
+    margin-bottom: 1rem;
   }
   
   .orange > h4 {
     padding-top: 22rem;
+    margin-bottom: 1rem;
   }
 
   .client-testimonial {

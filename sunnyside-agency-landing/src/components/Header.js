@@ -19,7 +19,13 @@ function Header() {
         <header>
             <nav className="navbar">
                 <img src={Logo} alt="logo"/>
-                <img src={Burger} alt="burger menu" onClick={burgerMenu}/>
+                <div className="desktop-directory">
+                    <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a href="#">Projects</a>
+                    <a className="active-desktop" href="#">Contact</a>
+                </div>
+                <img className="burger-menu" src={Burger} alt="burger menu" onClick={burgerMenu}/>
             </nav>
             <div className="menu">
                 <a href="#">About</a>
